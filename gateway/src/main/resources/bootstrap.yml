@@ -1,0 +1,23 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: cdp-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: service-sms
+          uri: lb://service-sms
+          predicates:
+            - Path= /service-sms/test/**
+          filters:
+            - StripPrefix=1
+    nacos:
+      server-addr: 172.31.255.39:8848
+      config:
+        namespace: 9c98b813-224d-4ace-949c-a84077298196
+        file-extension: yml
+        group: cdp
+      discovery:
+        namespace: 9c98b813-224d-4ace-949c-a84077298196
+        group: cdp

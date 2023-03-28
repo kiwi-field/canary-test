@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: service-sms
+#  profiles:
+#    active: v1
+  main:
+    allow-bean-definition-overriding: true
