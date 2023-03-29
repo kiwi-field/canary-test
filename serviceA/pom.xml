@@ -55,6 +55,5 @@
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
             <version>${spring.cloud-loadbalancer.version}</version>
         </dependency>
-
     </dependencies>
 </project>
