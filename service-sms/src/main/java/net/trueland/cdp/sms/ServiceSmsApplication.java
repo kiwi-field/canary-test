@@ -12,6 +12,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * @description: 微服务-》微服务灰度发布
+ * @author: kiwi
+ * @date: 2023/3/29
+ **/
 @SpringBootApplication
 @RestController
 @EnableDiscoveryClient

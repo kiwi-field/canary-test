@@ -1,5 +1,6 @@
 package net.trueland.cdp.sms.controller;
 
+import net.trueland.cdp.sms.feign.ServiceAFeign;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,8 @@ import javax.servlet.http.HttpServletRequest;
 public class TestCallServiceAController {
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private ServiceAFeign serviceAFeign;
 
     @GetMapping("/call")
     public String testCall(HttpServletRequest request){
@@ -25,5 +28,10 @@ public class TestCallServiceAController {
         System.out.println("call方法hashcode" + request.hashCode());
 
         return restTemplate.getForObject("http://service-A/test/serviceA-test",String.class);
+    }
+
+    @GetMapping("/feign/call")
+    public String feignCall(HttpServletRequest request){
+        return serviceAFeign.testCall();
     }
 }
