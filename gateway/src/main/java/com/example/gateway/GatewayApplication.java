@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @description: 通过自定义默认的负载均衡器实现灰度发布
+ * @description: 通过自定义默认的负载均衡器实现灰度发布   /service-sms/test/**接口测试    网关->微服务之间灰度
  * @author: kiwi
  * @date: 2023/3/28
  **/
